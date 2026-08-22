@@ -1,0 +1,37 @@
+[nest]
+name = "eigenlayer"
+chain = "mainnet"
+chain_id = 1
+# A keyless public endpoint, so this file is publishable: `nuthatch.toml` is pinned into the nest's
+# content address and must never carry a credential. It is enough to follow the tip. A *backfill*
+# needs archive depth this endpoint may not have - pass your own with `--rpc`, and check it first
+# with `nuthatch doctor --rpc <url>`.
+rpc_urls = [
+    "https://eth.drpc.org",
+]
+schema_version = 1
+block_timestamps = true
+
+[[contracts]]
+alias = "delegation"
+address = "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a"
+start_block = 17445563
+abi = "abis/delegation.json"
+
+[[contracts]]
+alias = "strategy"
+address = "0x858646372cc42e1a627fce94aa7a7033e7cf075a"
+start_block = 17445564
+abi = "abis/strategy.json"
+
+[[contracts]]
+alias = "eigenpod"
+address = "0x91e677b07f7af907ec9a428aafa9fc14a0d3a338"
+start_block = 17445564
+abi = "abis/eigenpod.json"
+
+[[contracts]]
+alias = "avs_directory"
+address = "0x135dda560e946695d6f155dacafc6f1f25c1f5af"
+start_block = 19492759
+abi = "abis/avs_directory.json"

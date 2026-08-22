@@ -1,0 +1,494 @@
+# semantic.toml - what this nest's data *means* (RFC-0016). Read by the MCP `schema`
+# tool, the admin UI, and the scaffolded skill. Edit descriptions freely; the
+# `[table.*.footguns]` are DERIVED from the ABI and regenerated - leave them be.
+
+schema_version = 1
+
+[nest]
+description = "The `eigenlayer` nest on mainnet. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.avs_directory__a_v_s_metadata_u_r_i_updated]
+description = "`AVSMetadataURIUpdated(address,string)` events emitted by the `avs_directory` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AVSMetadataURIUpdated(address,string) event"
+
+[table.avs_directory__a_v_s_metadata_u_r_i_updated.columns]
+avs = "The `avs` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+metadataURI = "The `metadataURI` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.avs_directory__initialized]
+description = "`Initialized(uint8)` events emitted by the `avs_directory` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Initialized(uint8) event"
+
+[table.avs_directory__initialized.columns]
+version = "The `version` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.avs_directory__operator_a_v_s_registration_status_updated]
+description = "`OperatorAVSRegistrationStatusUpdated(address,address,uint8)` events emitted by the `avs_directory` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OperatorAVSRegistrationStatusUpdated(address,address,uint8) event"
+
+[table.avs_directory__operator_a_v_s_registration_status_updated.columns]
+avs = "The `avs` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+status = "The `status` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.avs_directory__ownership_transferred]
+description = "`OwnershipTransferred(address,address)` events emitted by the `avs_directory` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OwnershipTransferred(address,address) event"
+
+[table.avs_directory__ownership_transferred.columns]
+newOwner = "The `newOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+previousOwner = "The `previousOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.avs_directory__paused]
+description = "`Paused(address,uint256)` events emitted by the `avs_directory` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Paused(address,uint256) event"
+
+[table.avs_directory__paused.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+newPausedStatus = "The `newPausedStatus` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.avs_directory__paused.footguns]
+big_ints = ["newPausedStatus"]
+overflows_dec = ["newPausedStatus"]
+
+[table.avs_directory__unpaused]
+description = "`Unpaused(address,uint256)` events emitted by the `avs_directory` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Unpaused(address,uint256) event"
+
+[table.avs_directory__unpaused.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+newPausedStatus = "The `newPausedStatus` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.avs_directory__unpaused.footguns]
+big_ints = ["newPausedStatus"]
+overflows_dec = ["newPausedStatus"]
+
+[table.delegation__delegation_approver_updated]
+description = "`DelegationApproverUpdated(address,address)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per DelegationApproverUpdated(address,address) event"
+
+[table.delegation__delegation_approver_updated.columns]
+newDelegationApprover = "The `newDelegationApprover` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__deposit_scaling_factor_updated]
+description = "`DepositScalingFactorUpdated(address,address,uint256)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per DepositScalingFactorUpdated(address,address,uint256) event"
+
+[table.delegation__deposit_scaling_factor_updated.columns]
+newDepositScalingFactor = "The `newDepositScalingFactor` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__deposit_scaling_factor_updated.footguns]
+big_ints = ["newDepositScalingFactor"]
+overflows_dec = ["newDepositScalingFactor"]
+
+[table.delegation__initialized]
+description = "`Initialized(uint8)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Initialized(uint8) event"
+
+[table.delegation__initialized.columns]
+version = "The `version` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__operator_metadata_u_r_i_updated]
+description = "`OperatorMetadataURIUpdated(address,string)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OperatorMetadataURIUpdated(address,string) event"
+
+[table.delegation__operator_metadata_u_r_i_updated.columns]
+metadataURI = "The `metadataURI` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__operator_registered]
+description = "`OperatorRegistered(address,address)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OperatorRegistered(address,address) event"
+
+[table.delegation__operator_registered.columns]
+delegationApprover = "The `delegationApprover` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__operator_shares_decreased]
+description = "`OperatorSharesDecreased(address,address,address,uint256)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OperatorSharesDecreased(address,address,address,uint256) event"
+
+[table.delegation__operator_shares_decreased.columns]
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+shares = "The `shares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__operator_shares_decreased.footguns]
+big_ints = ["shares"]
+overflows_dec = ["shares"]
+
+[table.delegation__operator_shares_increased]
+description = "`OperatorSharesIncreased(address,address,address,uint256)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OperatorSharesIncreased(address,address,address,uint256) event"
+
+[table.delegation__operator_shares_increased.columns]
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+shares = "The `shares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__operator_shares_increased.footguns]
+big_ints = ["shares"]
+overflows_dec = ["shares"]
+
+[table.delegation__operator_shares_slashed]
+description = "`OperatorSharesSlashed(address,address,uint256)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OperatorSharesSlashed(address,address,uint256) event"
+
+[table.delegation__operator_shares_slashed.columns]
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+totalSlashedShares = "The `totalSlashedShares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__operator_shares_slashed.footguns]
+big_ints = ["totalSlashedShares"]
+overflows_dec = ["totalSlashedShares"]
+
+[table.delegation__paused]
+description = "`Paused(address,uint256)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Paused(address,uint256) event"
+
+[table.delegation__paused.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+newPausedStatus = "The `newPausedStatus` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__paused.footguns]
+big_ints = ["newPausedStatus"]
+overflows_dec = ["newPausedStatus"]
+
+[table.delegation__slashing_withdrawal_completed]
+description = "`SlashingWithdrawalCompleted(bytes32)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per SlashingWithdrawalCompleted(bytes32) event"
+
+[table.delegation__slashing_withdrawal_completed.columns]
+withdrawalRoot = "The `withdrawalRoot` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__slashing_withdrawal_queued]
+description = "`SlashingWithdrawalQueued(bytes32,(address,address,address,uint256,uint32,address[],uint256[]),uint256[])` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per SlashingWithdrawalQueued(bytes32,(address,address,address,uint256,uint32,address[],uint256[]),uint256[]) event"
+
+[table.delegation__slashing_withdrawal_queued.columns]
+sharesToWithdraw = "The `sharesToWithdraw` uint256[] parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+withdrawal = "The `withdrawal` tuple parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+withdrawalRoot = "The `withdrawalRoot` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__staker_delegated]
+description = "`StakerDelegated(address,address)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StakerDelegated(address,address) event"
+
+[table.delegation__staker_delegated.columns]
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__staker_force_undelegated]
+description = "`StakerForceUndelegated(address,address)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StakerForceUndelegated(address,address) event"
+
+[table.delegation__staker_force_undelegated.columns]
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__staker_undelegated]
+description = "`StakerUndelegated(address,address)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StakerUndelegated(address,address) event"
+
+[table.delegation__staker_undelegated.columns]
+operator = "The `operator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__unpaused]
+description = "`Unpaused(address,uint256)` events emitted by the `delegation` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Unpaused(address,uint256) event"
+
+[table.delegation__unpaused.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+newPausedStatus = "The `newPausedStatus` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.delegation__unpaused.footguns]
+big_ints = ["newPausedStatus"]
+overflows_dec = ["newPausedStatus"]
+
+[table.eigenpod__beacon_chain_e_t_h_deposited]
+description = "`BeaconChainETHDeposited(address,uint256)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BeaconChainETHDeposited(address,uint256) event"
+
+[table.eigenpod__beacon_chain_e_t_h_deposited.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+podOwner = "The `podOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__beacon_chain_e_t_h_deposited.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[table.eigenpod__beacon_chain_e_t_h_withdrawal_completed]
+description = "`BeaconChainETHWithdrawalCompleted(address,uint256,uint96,address,address,bytes32)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BeaconChainETHWithdrawalCompleted(address,uint256,uint96,address,address,bytes32) event"
+
+[table.eigenpod__beacon_chain_e_t_h_withdrawal_completed.columns]
+delegatedAddress = "The `delegatedAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+nonce = "The `nonce` uint96 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+podOwner = "The `podOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+shares = "The `shares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+withdrawalRoot = "The `withdrawalRoot` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+withdrawer = "The `withdrawer` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__beacon_chain_e_t_h_withdrawal_completed.footguns]
+big_ints = [
+    "shares",
+    "nonce",
+]
+overflows_dec = ["shares"]
+
+[table.eigenpod__beacon_chain_slashing_factor_decreased]
+description = "`BeaconChainSlashingFactorDecreased(address,uint64,uint64)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BeaconChainSlashingFactorDecreased(address,uint64,uint64) event"
+
+[table.eigenpod__beacon_chain_slashing_factor_decreased.columns]
+newBeaconChainSlashingFactor = "The `newBeaconChainSlashingFactor` uint64 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+prevBeaconChainSlashingFactor = "The `prevBeaconChainSlashingFactor` uint64 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__burnable_e_t_h_shares_increased]
+description = "`BurnableETHSharesIncreased(uint256)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BurnableETHSharesIncreased(uint256) event"
+
+[table.eigenpod__burnable_e_t_h_shares_increased.columns]
+shares = "The `shares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__burnable_e_t_h_shares_increased.footguns]
+big_ints = ["shares"]
+overflows_dec = ["shares"]
+
+[table.eigenpod__initialized]
+description = "`Initialized(uint8)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Initialized(uint8) event"
+
+[table.eigenpod__initialized.columns]
+version = "The `version` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__new_total_shares]
+description = "`NewTotalShares(address,int256)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewTotalShares(address,int256) event"
+
+[table.eigenpod__new_total_shares.columns]
+newTotalShares = "The `newTotalShares` int256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+podOwner = "The `podOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__new_total_shares.footguns]
+big_ints = ["newTotalShares"]
+overflows_dec = ["newTotalShares"]
+
+[table.eigenpod__ownership_transferred]
+description = "`OwnershipTransferred(address,address)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OwnershipTransferred(address,address) event"
+
+[table.eigenpod__ownership_transferred.columns]
+newOwner = "The `newOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+previousOwner = "The `previousOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__paused]
+description = "`Paused(address,uint256)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Paused(address,uint256) event"
+
+[table.eigenpod__paused.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+newPausedStatus = "The `newPausedStatus` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__paused.footguns]
+big_ints = ["newPausedStatus"]
+overflows_dec = ["newPausedStatus"]
+
+[table.eigenpod__pectra_fork_timestamp_set]
+description = "`PectraForkTimestampSet(uint64)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per PectraForkTimestampSet(uint64) event"
+
+[table.eigenpod__pectra_fork_timestamp_set.columns]
+newPectraForkTimestamp = "The `newPectraForkTimestamp` uint64 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__pod_deployed]
+description = "`PodDeployed(address,address)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per PodDeployed(address,address) event"
+
+[table.eigenpod__pod_deployed.columns]
+eigenPod = "The `eigenPod` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+podOwner = "The `podOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__pod_shares_updated]
+description = "`PodSharesUpdated(address,int256)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per PodSharesUpdated(address,int256) event"
+
+[table.eigenpod__pod_shares_updated.columns]
+podOwner = "The `podOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+sharesDelta = "The `sharesDelta` int256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__pod_shares_updated.footguns]
+big_ints = ["sharesDelta"]
+overflows_dec = ["sharesDelta"]
+
+[table.eigenpod__proof_timestamp_setter_set]
+description = "`ProofTimestampSetterSet(address)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProofTimestampSetterSet(address) event"
+
+[table.eigenpod__proof_timestamp_setter_set.columns]
+newProofTimestampSetter = "The `newProofTimestampSetter` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__unpaused]
+description = "`Unpaused(address,uint256)` events emitted by the `eigenpod` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Unpaused(address,uint256) event"
+
+[table.eigenpod__unpaused.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+newPausedStatus = "The `newPausedStatus` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eigenpod__unpaused.footguns]
+big_ints = ["newPausedStatus"]
+overflows_dec = ["newPausedStatus"]
+
+[table.strategy__burn_or_redistributable_shares_decreased]
+description = "`BurnOrRedistributableSharesDecreased((address,uint32),uint256,address,uint256)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BurnOrRedistributableSharesDecreased((address,uint32),uint256,address,uint256) event"
+
+[table.strategy__burn_or_redistributable_shares_decreased.columns]
+operatorSet = "The `operatorSet` tuple parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+shares = "The `shares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+slashId = "The `slashId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__burn_or_redistributable_shares_decreased.footguns]
+big_ints = [
+    "slashId",
+    "shares",
+]
+overflows_dec = [
+    "slashId",
+    "shares",
+]
+
+[table.strategy__burn_or_redistributable_shares_increased]
+description = "`BurnOrRedistributableSharesIncreased((address,uint32),uint256,address,uint256)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BurnOrRedistributableSharesIncreased((address,uint32),uint256,address,uint256) event"
+
+[table.strategy__burn_or_redistributable_shares_increased.columns]
+operatorSet = "The `operatorSet` tuple parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+shares = "The `shares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+slashId = "The `slashId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__burn_or_redistributable_shares_increased.footguns]
+big_ints = [
+    "slashId",
+    "shares",
+]
+overflows_dec = [
+    "slashId",
+    "shares",
+]
+
+[table.strategy__burnable_shares_decreased]
+description = "`BurnableSharesDecreased(address,uint256)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BurnableSharesDecreased(address,uint256) event"
+
+[table.strategy__burnable_shares_decreased.columns]
+shares = "The `shares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__burnable_shares_decreased.footguns]
+big_ints = ["shares"]
+overflows_dec = ["shares"]
+
+[table.strategy__deposit]
+description = "`Deposit(address,address,uint256)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Deposit(address,address,uint256) event"
+
+[table.strategy__deposit.columns]
+shares = "The `shares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__deposit.footguns]
+big_ints = ["shares"]
+overflows_dec = ["shares"]
+
+[table.strategy__initialized]
+description = "`Initialized(uint8)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Initialized(uint8) event"
+
+[table.strategy__initialized.columns]
+version = "The `version` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__ownership_transferred]
+description = "`OwnershipTransferred(address,address)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OwnershipTransferred(address,address) event"
+
+[table.strategy__ownership_transferred.columns]
+newOwner = "The `newOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+previousOwner = "The `previousOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__paused]
+description = "`Paused(address,uint256)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Paused(address,uint256) event"
+
+[table.strategy__paused.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+newPausedStatus = "The `newPausedStatus` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__paused.footguns]
+big_ints = ["newPausedStatus"]
+overflows_dec = ["newPausedStatus"]
+
+[table.strategy__slash_resolution_block_set]
+description = "`SlashResolutionBlockSet((address,uint32),uint256,uint32)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per SlashResolutionBlockSet((address,uint32),uint256,uint32) event"
+
+[table.strategy__slash_resolution_block_set.columns]
+operatorSet = "The `operatorSet` tuple parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+resolutionBlock = "The `resolutionBlock` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+slashId = "The `slashId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__slash_resolution_block_set.footguns]
+big_ints = ["slashId"]
+overflows_dec = ["slashId"]
+
+[table.strategy__strategy_added_to_deposit_whitelist]
+description = "`StrategyAddedToDepositWhitelist(address)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StrategyAddedToDepositWhitelist(address) event"
+
+[table.strategy__strategy_added_to_deposit_whitelist.columns]
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__strategy_removed_from_deposit_whitelist]
+description = "`StrategyRemovedFromDepositWhitelist(address)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StrategyRemovedFromDepositWhitelist(address) event"
+
+[table.strategy__strategy_removed_from_deposit_whitelist.columns]
+strategy = "The `strategy` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__strategy_whitelister_changed]
+description = "`StrategyWhitelisterChanged(address,address)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StrategyWhitelisterChanged(address,address) event"
+
+[table.strategy__strategy_whitelister_changed.columns]
+newAddress = "The `newAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+previousAddress = "The `previousAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__unpaused]
+description = "`Unpaused(address,uint256)` events emitted by the `strategy` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Unpaused(address,uint256) event"
+
+[table.strategy__unpaused.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+newPausedStatus = "The `newPausedStatus` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.strategy__unpaused.footguns]
+big_ints = ["newPausedStatus"]
+overflows_dec = ["newPausedStatus"]
+
+[view]
+
+# Authored views (views/*.sql) are described here so the MCP/`/schema` can render them:
+# [view.your_view_name]
+# description = "What this derivation computes."

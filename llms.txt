@@ -1,0 +1,70 @@
+# nuthatch nest on mainnet
+
+A self-hosted blockchain index. Query it locally; there is no third-party API.
+
+## Contracts
+- `delegation` = 0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a
+- `strategy` = 0x858646372cc42e1a627fce94aa7a7033e7cf075a
+- `eigenpod` = 0x91e677b07f7af907ec9a428aafa9fc14a0d3a338
+- `avs_directory` = 0x135dda560e946695d6f155dacafc6f1f25c1f5af
+
+## Tables (one per contract event)
+- `avs_directory__a_v_s_metadata_u_r_i_updated` - AVSMetadataURIUpdated(address,string) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, avs, metadataURI)
+- `avs_directory__initialized` - Initialized(uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, version)
+- `avs_directory__operator_a_v_s_registration_status_updated` - OperatorAVSRegistrationStatusUpdated(address,address,uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operator, avs, status)
+- `avs_directory__ownership_transferred` - OwnershipTransferred(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, previousOwner, newOwner)
+- `avs_directory__paused` - Paused(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, account, newPausedStatus)
+- `avs_directory__unpaused` - Unpaused(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, account, newPausedStatus)
+- `delegation__delegation_approver_updated` - DelegationApproverUpdated(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operator, newDelegationApprover)
+- `delegation__deposit_scaling_factor_updated` - DepositScalingFactorUpdated(address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, staker, strategy, newDepositScalingFactor)
+- `delegation__initialized` - Initialized(uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, version)
+- `delegation__operator_metadata_u_r_i_updated` - OperatorMetadataURIUpdated(address,string) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operator, metadataURI)
+- `delegation__operator_registered` - OperatorRegistered(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operator, delegationApprover)
+- `delegation__operator_shares_decreased` - OperatorSharesDecreased(address,address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operator, staker, strategy, shares)
+- `delegation__operator_shares_increased` - OperatorSharesIncreased(address,address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operator, staker, strategy, shares)
+- `delegation__operator_shares_slashed` - OperatorSharesSlashed(address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operator, strategy, totalSlashedShares)
+- `delegation__paused` - Paused(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, account, newPausedStatus)
+- `delegation__slashing_withdrawal_completed` - SlashingWithdrawalCompleted(bytes32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, withdrawalRoot)
+- `delegation__slashing_withdrawal_queued` - SlashingWithdrawalQueued(bytes32,(address,address,address,uint256,uint32,address[],uint256[]),uint256[]) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, withdrawalRoot, withdrawal, sharesToWithdraw)
+- `delegation__staker_delegated` - StakerDelegated(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, staker, operator)
+- `delegation__staker_force_undelegated` - StakerForceUndelegated(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, staker, operator)
+- `delegation__staker_undelegated` - StakerUndelegated(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, staker, operator)
+- `delegation__unpaused` - Unpaused(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, account, newPausedStatus)
+- `eigenpod__beacon_chain_e_t_h_deposited` - BeaconChainETHDeposited(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, podOwner, amount)
+- `eigenpod__beacon_chain_e_t_h_withdrawal_completed` - BeaconChainETHWithdrawalCompleted(address,uint256,uint96,address,address,bytes32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, podOwner, shares, nonce, delegatedAddress, withdrawer, withdrawalRoot)
+- `eigenpod__beacon_chain_slashing_factor_decreased` - BeaconChainSlashingFactorDecreased(address,uint64,uint64) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, staker, prevBeaconChainSlashingFactor, newBeaconChainSlashingFactor)
+- `eigenpod__burnable_e_t_h_shares_increased` - BurnableETHSharesIncreased(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, shares)
+- `eigenpod__initialized` - Initialized(uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, version)
+- `eigenpod__new_total_shares` - NewTotalShares(address,int256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, podOwner, newTotalShares)
+- `eigenpod__ownership_transferred` - OwnershipTransferred(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, previousOwner, newOwner)
+- `eigenpod__paused` - Paused(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, account, newPausedStatus)
+- `eigenpod__pectra_fork_timestamp_set` - PectraForkTimestampSet(uint64) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, newPectraForkTimestamp)
+- `eigenpod__pod_deployed` - PodDeployed(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, eigenPod, podOwner)
+- `eigenpod__pod_shares_updated` - PodSharesUpdated(address,int256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, podOwner, sharesDelta)
+- `eigenpod__proof_timestamp_setter_set` - ProofTimestampSetterSet(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, newProofTimestampSetter)
+- `eigenpod__unpaused` - Unpaused(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, account, newPausedStatus)
+- `strategy__burn_or_redistributable_shares_decreased` - BurnOrRedistributableSharesDecreased((address,uint32),uint256,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operatorSet, slashId, strategy, shares)
+- `strategy__burn_or_redistributable_shares_increased` - BurnOrRedistributableSharesIncreased((address,uint32),uint256,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operatorSet, slashId, strategy, shares)
+- `strategy__burnable_shares_decreased` - BurnableSharesDecreased(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, strategy, shares)
+- `strategy__deposit` - Deposit(address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, staker, strategy, shares)
+- `strategy__initialized` - Initialized(uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, version)
+- `strategy__ownership_transferred` - OwnershipTransferred(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, previousOwner, newOwner)
+- `strategy__paused` - Paused(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, account, newPausedStatus)
+- `strategy__slash_resolution_block_set` - SlashResolutionBlockSet((address,uint32),uint256,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, operatorSet, slashId, resolutionBlock)
+- `strategy__strategy_added_to_deposit_whitelist` - StrategyAddedToDepositWhitelist(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, strategy)
+- `strategy__strategy_removed_from_deposit_whitelist` - StrategyRemovedFromDepositWhitelist(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, strategy)
+- `strategy__strategy_whitelister_changed` - StrategyWhitelisterChanged(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, previousAddress, newAddress)
+- `strategy__unpaused` - Unpaused(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, account, newPausedStatus)
+
+## Live HTTP API (run `nuthatch dev`)
+- `GET /`                    index status
+- `GET /tables`              every table with its columns
+- `GET /table/{name}?limit=N` recent rows of one table (hot + sealed)
+- `GET /entity/{id}`         one row by id (`{block:012}-{logindex:06}`)
+- `GET /sql?q=SELECT...`     read-only SQL; each table is a view named `{alias}__{event}`
+- `GET /balances?limit=N`    top holder balances (when an ERC-20 Transfer table is present)
+- `GET /balance/{address}`   one address's derived balance
+
+## MCP (for coding agents)
+Run `nuthatch mcp` (stdio) to expose tools: status, schema, tables, table, sql, entity,
+balance, top_balances. Fully offline against the local instance; nothing phones home.
