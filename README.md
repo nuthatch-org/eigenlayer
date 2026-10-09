@@ -1,6 +1,6 @@
 # eigenlayer
 
-A [nuthatch](https://github.com/nightswatchhq/nuthatch) nest: **EigenLayer core on Ethereum**.
+A [nuthatch](https://github.com/nuthatch-org/nuthatch) nest: **EigenLayer core on Ethereum**.
 
 Restaking across four contracts: delegation, strategies, EigenPods and the AVS directory.
 
@@ -24,7 +24,7 @@ Indexed blocks **25,782,194 to 25,812,130** and sealed **1,334 events**. Every t
 ## Run it
 
 ```sh
-nuthatch init --from https://github.com/nightswatchhq/eigenlayer
+nuthatch init --from https://github.com/nuthatch-org/eigenlayer
 cd eigenlayer
 nuthatch dev --dir . --backfill 50000 --seal-direct
 nuthatch sql --dir . "SELECT count(*) FROM \"avs_directory__a_v_s_metadata_u_r_i_updated\""
